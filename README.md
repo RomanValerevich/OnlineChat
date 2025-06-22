@@ -30,21 +30,21 @@
 
 # СЕРВЕР
 
-**[Server](src\main\java\org\example\Server.java) используется**:
-- для записи настроек в файл [settings.txt](src\main\resources\settings.txt), откуда пользователь считывает информацию и подключается;
+**[Server](src/main/java/org/example/Server.java) используется**:
+- для записи настроек в файл [settings.txt](src/main/resources/settings.txt), откуда пользователь считывает информацию и подключается;
 - для принятия подключений пользователей и получения от них сообщений;
-- Устанавливаем поток для принятия новых пользователей в [ClientHandler](src\main\java\org\example\thread\ClientHandler.java), где получаем ИМЯ - Пользоваетля и происходит дальнейшее чтение сообщений каждого польователя отдельно и запись в файлы [ClientLog](src\main\java\org\example\logger\ClientLog.java) и ServerLog.log;
+- Устанавливаем поток для принятия новых пользователей в [ClientHandler](src/main/java/org/example/thread/ClientHandler.java), где получаем ИМЯ - Пользоваетля и происходит дальнейшее чтение сообщений каждого польователя отдельно и запись в файлы [ClientLog](src/main/java/org/example/logger/ClientLog.java) и ServerLog.log;
 - Все сообщения записываются в файл [ServerLog](src/main/java/org/example/logger/ServerLog.java)
 - Server прекращает работу по команде "exit".
   
 # КЛИЕНТ
 
-**[Client](src\main\java\org\example\Client.java) используется**:
-- Считываем из [файла](src\main\resources\settings.txt) настройки для подключения к Серверу;
+**[Client](src/main/java/org/example/Client.java) используется**:
+- Считываем из [файла](src/main/resources/settings.txt) настройки для подключения к Серверу;
 - Для авторизации;
-- Создаем поток [ReadMessage](src\main\java\org\example\thread\ReadMessage.java) для постоянного считывания файла и проверка на новые сообщения и сам код потока;
+- Создаем поток [ReadMessage](src/main/java/org/example/thread/ReadMessage.java) для постоянного считывания файла и проверка на новые сообщения и сам код потока;
 - Посылаем сообщения серверу для записи в файл до момента ввода "exit", тогда происходит выход из чата.
   
-**[ManyClientTest](src\main\java\org\example\thread\ManyClientTest.java) используется**:
-- Поток для тестирования подключения нескольких пользователей, которые запускаются через [Main.java](src\main\java\org\example\Main.java)
+**[ManyClientTest](src/main/java/org/example/thread/ManyClientTest.java) используется**:
+- Поток для тестирования подключения нескольких пользователей, которые запускаются через [Main.java](src/main/java/org/example/Main.java)
 .
